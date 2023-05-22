@@ -1,10 +1,24 @@
 {
-  "name": "my-test-components",
-  "version": "0.0.0",
+  "name": "icsp-test-components",
+  "version": "0.0.1",
   "private": false,
   "keywords": [
     "icsp-front"
   ],
+  "files": [
+    "lib/*",
+    "packages/*",
+    "package.json"
+  ],
+  "main": "./lib/web-vue.umd.js",
+    "module": "./lib/web-vue.mjs",
+    "exports": {
+      ".": {
+        "import": "./lib/web-vue.mjs",
+        "require": "./lib/web-vue.umd.js"
+      },
+      "./lib/style.css": "./lib/style.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
